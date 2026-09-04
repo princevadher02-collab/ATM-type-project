@@ -16,7 +16,7 @@ Router.post("/", async (req, res) => {
       amount: 100,
     });
     if(!result) return rederect("index",{
-      message : "please choose username",
+      message : "please choose diffrent username",
     })
     return res.render("index", {
       message: "account creaated susscesfully",
