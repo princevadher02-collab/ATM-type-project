@@ -175,6 +175,7 @@
         type="number"
         id="debitAmount"
         name="debitAmount"
+        min="1"
         required
         min="1"
         placeholder="Enter amount to debit"
@@ -193,11 +194,11 @@
 </div>
 
 </body>
-<% if (locals.name) { %>
+<!--<% if (locals.name) { %>
         <script>
             alert("<%= name %> your balence is <%= amount %>");
         </script>
-    <% } %>
+    <% } %>-->
 
 
 </html>
