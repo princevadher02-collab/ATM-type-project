@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ATM | Debit Money</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #05070d;
+      color: white;
+    }
+
+    .atm-container {
+      width: 400px;
+      padding: 35px;
+      border-radius: 20px;
+      background: #0b101a;
+      border: 1px solid #26364d;
+      box-shadow: 0 0 30px rgba(0, 180, 255, 0.25);
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .title h1 {
+      font-size: 28px;
+      letter-spacing: 3px;
+    }
+
+    .title p {
+      margin-top: 8px;
+      color: #7d91aa;
+      font-size: 13px;
+    }
+
+    .input-box {
+      margin-bottom: 20px;
+    }
+
+    .input-box label {
+      display: block;
+      margin-bottom: 8px;
+      color: #8fa4bd;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .input-box input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid #2b405b;
+      outline: none;
+      background: #060a11;
+      color: white;
+      font-size: 16px;
+    }
+
+    .input-box input:focus {
+      border-color: #00bfff;
+      box-shadow: 0 0 10px rgba(0, 191, 255, 0.25);
+    }
+
+    .amount-section {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid #26364d;
+    }
+
+    .amount-section label {
+      display: block;
+      margin-bottom: 8px;
+      color: #8fa4bd;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .amount-section input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid #2b405b;
+      outline: none;
+      background: #060a11;
+      color: white;
+      font-size: 18px;
+    }
+
+    .debit-btn {
+      width: 100%;
+      margin-top: 25px;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: #00a8ff;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .debit-btn:hover {
+      background: #008bd1;
+      box-shadow: 0 0 18px rgba(0, 168, 255, 0.4);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #53677e;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="atm-container">
+    <form method="post" action="/user/debit">
+
+    <div class="title">
+      <h1>ATM</h1>
+      <p>DEBIT MONEY</p>
+    </div>
+
+    <!-- User Name -->
+    <div class="input-box">
+      <label>USER NAME</label>
+      <input
+        type="text"
+        id="Name"
+        name="name"
+         required
+        value="<%= name %>"
+        placeholder="Enter user name"
+      >
+    </div>
+
+    <!-- User Current Amount -->
+    <div class="input-box">
+      <label>AVAILABLE AMOUNT</label>
+      <input
+        type="text"
+        id="Amount"
+        name="amount"
+         required
+        value="<%= amount %>"
+        placeholder="Available amount"
+      >
+    </div>
+
+    <!-- Debit Amount -->
+    <div class="amount-section">
+      <label>DEBIT AMOUNT</label>
+
+      <input
+        type="number"
+        id="debitAmount"
+        name="debitAmount"
+        required
+        placeholder="Enter amount to debit"
+      >
+    </div>
+
+    <button class="debit-btn">
+      DEBIT MONEY
+    </button>
+
+    <div class="footer">
+      SECURE ATM TRANSACTION
+    </div>
+
+  </form>
+</div>
+
+</body>
+<% if (locals.name) { %>
+        <script>
+            alert("<%= name %> your balence is <%= amount %>");
+        </script>
+    <% } %>
+
+
+</html>
