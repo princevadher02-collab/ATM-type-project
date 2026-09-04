@@ -25,4 +25,4 @@ app.set("viwes",path.resolve("./views"));
 app.use("/", staticRouter);
 app.use("/user",userRouter);
 
-app.listen("18012", () => console.log("server start on 18012"));
+app.listen("8001", () => console.log("server start on 8001"));

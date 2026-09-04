@@ -10,11 +10,14 @@ Router.post("/", async (req, res) => {
     const { name, password } = req.body;
 
     if (!req.body) return res.err("not working");
-    await user.create({
+    const result = await user.create({
       name,
       password,
       amount: 100,
     });
+    if(!result) return rederect("index",{
+      message : "please choose username",
+    })
     return res.render("index", {
       message: "account creaated susscesfully",
     });
